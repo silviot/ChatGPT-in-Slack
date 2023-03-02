@@ -13,6 +13,7 @@ import os
 from slack_bolt import App, Ack, BoltContext
 import openai
 from slack_sdk.web import WebClient
+from slack_sdk.http_retry.builtin_handlers import RateLimitErrorRetryHandler
 
 from app import register_listeners
 
@@ -39,12 +40,15 @@ SlackRequestHandler.clear_all_log_handlers()
 logging.basicConfig(format="%(asctime)s %(message)s", level=logging.DEBUG)
 s3_client = boto3.client("s3")
 openai_bucket_name = os.environ["OPENAI_S3_BUCKET_NAME"]
+client = WebClient()
+client.retry_handlers.append(RateLimitErrorRetryHandler(max_retry_count=2))
 
 
 def handler(event, context_):
     app = App(
         process_before_response=True,
         oauth_flow=LambdaS3OAuthFlow(),
+        client=client,
     )
     app.oauth_flow.settings.install_page_rendering_enabled = False
     register_listeners(app)

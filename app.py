@@ -3,6 +3,7 @@ import os
 from slack_bolt import App, Ack, BoltContext
 from typing import Dict
 from slack_sdk.web import WebClient
+from slack_sdk.http_retry.builtin_handlers import RateLimitErrorRetryHandler
 from internals import (
     post_wip_message,
     call_openai,
@@ -183,7 +184,9 @@ if __name__ == "__main__":
 
     logging.basicConfig(level=logging.DEBUG)
 
-    app = App(token=os.environ["SLACK_BOT_TOKEN"])
+    client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
+    client.retry_handlers.append(RateLimitErrorRetryHandler(max_retry_count=2))
+    app = App(client=client)
     register_listeners(app)
 
     @app.middleware
