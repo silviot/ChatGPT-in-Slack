@@ -64,7 +64,7 @@ def start_convo(
             user=context.user_id,
         )
     except Exception as e:
-        text = f"Failed to start a conversations with ChatGPT: {e}"
+        text = f"Failed to start a conversation with ChatGPT: {e}"
         logger.exception(text, e)
         if wip_reply is not None:
             client.chat_update(
