@@ -7,7 +7,7 @@ The bot can reply considering the context of a conversation.
 
 You can interact with ChatGPT like you do in the website. In the same thread, the bot remember what you already said.
 
-<img src="https://user-images.githubusercontent.com/19658/222392427-67e01de9-90f9-4412-819d-c1e3b7e18b33.gif" width=500 />
+<img src="https://user-images.githubusercontent.com/19658/222405498-867f5002-c8ba-4dc9-bd86-fddc5192070c.gif" width=500 />
 
 ## Run The App
 
