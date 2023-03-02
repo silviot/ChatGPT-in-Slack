@@ -97,7 +97,7 @@ def reply_if_necessary(
         )
         messages = []
         user_id = context.user_id
-        last_assistant_idx = 0
+        last_assistant_idx = -1
         for idx, reply in enumerate(replies.get("messages", [])):
             maybe_event_type = reply.get("metadata", {}).get("event_type")
             if maybe_event_type == "chat-gpt-convo":
@@ -115,6 +115,9 @@ def reply_if_necessary(
                             user_id = new_user_id
                     messages = maybe_new_messages
                     last_assistant_idx = idx
+
+        if last_assistant_idx == -1:
+            return
 
         for reply in replies.get("messages", [])[(last_assistant_idx + 1) :]:
             messages.append({"content": reply.get("text"), "role": "user"})
