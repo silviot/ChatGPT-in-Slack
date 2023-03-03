@@ -44,6 +44,16 @@ pip install -r requirements.txt
 python app.py
 ```
 
+## Running the App for Company Workspaces
+
+Confidentiality of information is top priority for businesses.
+
+This app is open-sourced! so please feel free to fork it and deploy the app onto the infrastructure that you manage.
+After going through the above local development process, you can deploy the app using `Dockerfile`, which is placed at the root directory of this project.
+
+The `Dockerfile` is designed to establish a WebSocket connection with Slack via Socket Mode.
+This means that there's no need to provide a public URL for communication with Slack.
+
 ## The License
 
 The MIT License
