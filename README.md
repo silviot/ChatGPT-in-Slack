@@ -9,15 +9,15 @@ Please check [the product website](https://seratch.notion.site/ChatGPT-in-Slack-
 
 You can interact with ChatGPT like you do in the website. In the same thread, the bot remember what you already said.
 
-<img src="https://user-images.githubusercontent.com/19658/222405498-867f5002-c8ba-4dc9-bd86-fddc5192070c.gif" width=500 />
+<img src="https://user-images.githubusercontent.com/19658/222405498-867f5002-c8ba-4dc9-bd86-fddc5192070c.gif" width=450 />
 
 Consider this realistic scenario: ask the bot to generate a business email for communication with your manager.
 
-<img width="500" src="https://user-images.githubusercontent.com/19658/222609940-eb581361-eeea-441a-a300-96ecdbc23d0b.png">
+<img width="700" src="https://user-images.githubusercontent.com/19658/222609940-eb581361-eeea-441a-a300-96ecdbc23d0b.png">
 
 With ChatGPT, you don't need to ask a perfectly formulated question at first. Adjusting the details after receiving the bot's initial response is a great approach.
 
-<img width="977" src="https://user-images.githubusercontent.com/19658/222609947-b99ace0d-4c90-4265-940d-3fc373429b80.png">
+<img width="700" src="https://user-images.githubusercontent.com/19658/222609947-b99ace0d-4c90-4265-940d-3fc373429b80.png">
 
 Doesn't that sound cool? 😎
 
