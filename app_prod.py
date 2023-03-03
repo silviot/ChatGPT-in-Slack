@@ -37,9 +37,11 @@ from slack_bolt.adapter.aws_lambda import SlackRequestHandler
 from slack_bolt.adapter.aws_lambda.lambda_s3_oauth_flow import LambdaS3OAuthFlow
 
 SlackRequestHandler.clear_all_log_handlers()
-logging.basicConfig(format="%(asctime)s %(message)s", level=logging.DEBUG)
+logging.basicConfig(format="%(asctime)s %(message)s", level=logging.WARN)
+
 s3_client = boto3.client("s3")
 openai_bucket_name = os.environ["OPENAI_S3_BUCKET_NAME"]
+
 client = WebClient()
 client.retry_handlers.append(RateLimitErrorRetryHandler(max_retry_count=2))
 
